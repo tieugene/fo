@@ -1,0 +1,6 @@
+{% extends "core/agent_base.html" %}
+{% block body_main %}
+{{ object.name }}
+<!-- TODO: firms -->
+<a href="{# url 'agent_edit' object.pk #}"> {% include "svgbutton/edit.html" %} </a>
+{% endblock %}

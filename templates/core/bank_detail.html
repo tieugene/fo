@@ -1,0 +1,14 @@
+{% extends "core/bank_base.html" %}
+{% block body_main %}
+<table width="auto" border="1">
+ <tbody>
+  <tr> <th> Наш </th> <td> {{ object.our }} </td> </tr>
+  <tr> <th> БИК </th> <td> {{ object.bik }} </td> </tr>
+  <tr> <th> К/С </th> <td> {{ object.ks }} </td> </tr>
+  <tr> <th> Кратко </th> <td> {{ object.sname }} </td> </tr>
+  <tr> <th> Полностью </th> <td> {{ object.fname }} </td> </tr>
+ </tbody>
+</table>
+<!-- TODO: orgs -->
+<a href="{# url 'bank_edit' object.pk #}"> {% include "svgbutton/edit.html" %} </a>
+{% endblock %}

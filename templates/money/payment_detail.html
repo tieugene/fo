@@ -1,0 +1,18 @@
+{% extends "money/payment_base.html" %}
+{% block body_main %}
+<table width="auto" border="1">
+ <tbody>
+  <tr> <th> Дата </th> <td> {{ object.date }} </td> </tr>
+  <tr> <th> Фирма </th> <td> {{ object.our }} </td> </tr>
+  <tr> <th> Контрагент </th> <td> {{ object.their }} </td> </tr>
+  <tr> <th> Тип документа </th> <td> {{ object.doctype }} </td> </tr>
+  <tr> <th> № документа </th> <td> {{ object.docno }} </td> </tr>
+  <tr> <th> Сумма </th> <td> {{ object.sum }} </td> </tr>
+  <tr> <th> Основание </th> <td> {{ object.purpose }} </td> </tr>
+  <tr> <th> Тип платежа </th> <td> {{ object.type }} </td> </tr>
+  <tr> <th> Клиент </th> <td> {{ object.client }} </td> </tr>
+ </tbody>
+</table>
+<!-- TODO: orgs -->
+<a href="{# url 'payment_edit' object.pk #}"> {% include "svgbutton/edit.html" %} </a>
+{% endblock %}

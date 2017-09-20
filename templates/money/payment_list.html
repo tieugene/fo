@@ -1,0 +1,44 @@
+{% extends "money/payment_base.html" %}
+{% block css %}
+ tr.list td {
+  cursor:pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  white-space: nowrap;
+ }
+{% endblock %}
+{% block body_main %}
+{% include "paginator.html" %}
+<table width="auto" border="1">
+<thead>
+ <tr>
+  <th> # </th>
+  <th> Дата </th>
+  <th> Фирма </th>
+  <th> Контрагент </th>
+  <th> Док.Тип </th>
+  <th> Док.№ </th>
+  <th> Сумма </th>
+  <th> Основание </th>
+  <th> Тип </th>
+  <th> Клиент </th>
+ </tr>
+</thead>
+<tbody>
+{% for object in object_list %}
+ <tr class="list" onclick="window.document.location='{% url 'bank_view' object.pk %}'">
+  <td align="right"> {{ object.pk }} </td>
+  <td> {{ object.date }} </td>
+  <td> {{ object.our }} </td>
+  <td> {{ object.their }} </td>
+  <td> {{ object.doctype }} </td>
+  <td> {{ object.docno }} </td>
+  <td style="font-family: mono"> {{ object.sum }} </td>
+  <td> {{ object.purpose }} </td>
+  <td> {{ object.type }} </td>
+  <td> {{ object.client }} </td>
+ </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

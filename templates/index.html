@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block jsready %}
+$("#tm_index").addClass("active");
+{% endblock %}
+{% block body_main %}
+<center>
+ <table border="0">
+  <tr>
+   <th> Справочники </th>
+   <th> Журналы </th>
+  </tr>
+  <tr>
+   <td>
+    <a href="{% url 'bank_list' %}" class="nou"> <button type="button" class="plain" style="padding: 5pt 10pt"> Банки </button> </a>
+   </td>
+   <td>
+    <a href="{% url 'payment_list' %}" class="nou"> <button type="button" class="plain" style="padding: 5pt 10pt"> Выписки </button> </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <a href="{% url 'org_list' %}" class="nou"> <button type="button" class="plain" style="padding: 5pt 10pt"> Организации </button> </a>
+   </td>
+   <td>
+    <a href="{% url 'cash_list' %}" class="nou"> <button type="button" class="plain" style="padding: 5pt 10pt"> Касса </button> </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <a href="{% url 'client_list' %}" class="nou"> <button type="button" class="plain" style="padding: 5pt 10pt"> Клиенты </button> </a>
+   </td>
+   <td>
+   </td>
+  </tr>
+ </table>
+</center>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "core/org_base.html" %}
+{% block css %}
+ tr.list td {
+  cursor:pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  white-space: nowrap;
+ }
+{% endblock %}
+{% block body_main %}
+{% include "paginator.html" %}
+<table width="auto" border="1">
+<thead>
+ <tr>
+  <th> # </th>
+  <th> Наше </th>
+  <th> ИНН </th>
+  <th> Кратко </th>
+  <th> Полностью </th>
+ </tr>
+</thead>
+<tbody>
+{% for object in object_list %}
+ <tr class="list" onclick="window.document.location='{% url 'org_view' object.pk %}'">
+  <td align="right"> {{ object.pk }} </td>
+  <td> {{ object.our }} </td>
+  <td style="font-family: mono"> {{ object.inn }} </td>
+  <td> {{ object.sname }} </td>
+  <td> {{ object.fname }} </td>
+ </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
